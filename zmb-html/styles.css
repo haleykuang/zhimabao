@@ -1,0 +1,252 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap'); */
+@font-face {
+  font-family: 'MyCustomFont'; /* 定义字体的名称 */
+  src: url('font/CaniculeDisplayv0.1-Black.Trial.ttf') format('truetype'); /* 指定字体文件的路径和格式 */
+  font-weight: normal; /* 可选，指定字体的粗细 */
+  font-style: normal;  /* 可选，指定字体的样式 */
+}
+@font-face {
+  font-family: 'Zhi';
+  src: url('font/GenSenMaruGothicTW-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'ZhiText';
+  src: url('font/GenSenMaruGothicTW-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'roboot', sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background-color: #fffaee;
+}
+
+nav {
+  width: 100%;
+  height: 48px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: 1000; 
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 40px;
+}
+
+nav ul li a {
+  font-weight: 300;
+  color: #adadad;
+  transition: 600ms;
+}
+
+nav ul li a:hover {
+  color: #f5f5f7;
+}
+
+/*--- section welcome ---*/
+.welcome {
+  width: 100%;
+  height: 700px;
+  background-image: url("picture/homepage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.welcome h1 {
+  color: #2b2895;
+  font-weight: 200;
+  font-size: 4rem;
+}
+
+/*--- section product ---*/
+.product-mac,
+.product-iphone,
+.product-watch,
+.product-ipad {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  cursor: pointer;
+}
+
+.product-mac h2,
+.product-iphone h2,
+.product-watch h2,
+.product-ipad h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  font-family: 'MyCustomFont';
+  margin-bottom: 20px;
+  text-align: left; 
+  width: 100%; 
+}
+
+.container {
+  width: 1070px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  opacity: 0;
+  transition: .5s ease all;
+}
+/* .container:hover img {
+  transform: scale(1.1);
+} */
+
+.container:hover::after {opacity: 0.2;}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+.grid-product {
+  background: #e6a4a4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: .5s;
+}
+/* 小猫图片鼠标hover放大效果 */
+.grid-product:hover {
+  /* background: #e1e1e1; */
+  transform: scale(1.2);
+}
+.grid-product img {transition: .5s ease all; width: 100%; object-fit:cover;}
+.grid-product img {
+  width: 300px;
+}
+.grid-detail {
+  margin: 20px 0;
+  text-align: center;
+}
+.grid-detail p:last-child {
+  transition: .5s;
+  margin-top: 10px;
+}
+.grid-product:hover > .grid-detail p:last-child {
+  color: #3498db;
+}
+
+/*-------*/
+.grid-full {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.grid-product-full {
+  background: #f1f1f1;
+  grid-column: span 3;
+  display: flex;
+  position: relative;
+}
+.grid-detail-sum {
+  position: absolute;
+  top: 35%;
+  right: 12%;
+  text-align: center;
+}
+.grid-detail-sum h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: 'roboot', sans-serif;
+}
+.grid-detail-sum p {
+  margin: 20px 0;
+}
+.grid-detail-sum a {
+  color: #3498db;
+}
+.grid-detail-sum a:hover {
+  text-decoration: underline;
+}
+
+/* Introduction */
+.product-intro {
+  position: relative;
+  padding: 100px 50px;
+  width: 1280px;
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  background-image: url("picture/page2_background.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.product-intro .intro-avatar {
+  width: 37%;
+}
+.product-intro .intro-list {
+  padding-left: 120px;
+  width: 60%;
+}
+.product-intro img {
+  width: 100%;
+}
+.intro-list h3 {
+  font-size: 72px;
+  color: #2b2895;
+  font-family: 'Zhi';
+}
+.intro-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.intro-text li {
+  margin: 20px 0;
+  width: 180px;
+  font-size: 26px;
+  font-family: 'ZhiText';
+}
+.intro-text .intro-type {
+  font-size: 22px;
+  color: #2b2895;
+}
+.product-intro .intro-cat {
+  position: absolute;
+  bottom: 0;
+  right: 140px;
+  width: 400px;
+}
+
+
+
